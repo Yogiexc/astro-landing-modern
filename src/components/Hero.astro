@@ -1,0 +1,151 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title fade-in">
+        Build <span class="gradient-text">Lightning Fast</span> Websites
+      </h1>
+      
+      <p class="hero-description fade-in">
+        Astro menghadirkan Island Architecture untuk performa maksimal. 
+        Zero JavaScript by default, interaktif hanya saat dibutuhkan.
+      </p>
+      
+      <div class="hero-actions fade-in">
+        <a href="#features" class="btn btn-primary">
+          Explore Features
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.5 10h11m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        
+        <a href="#benefits" class="btn btn-secondary">
+          Learn More
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">100</div>
+          <div class="stat-label">Lighthouse Score</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">0kb</div>
+          <div class="stat-label">JavaScript (Default)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">&lt;1s</div>
+          <div class="stat-label">Time to Interactive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg) 0%,
+      var(--color-bg-secondary) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-2xl) 0;
+  }
+  
+  .hero-title {
+    margin-bottom: var(--space-md);
+    animation-delay: 0.1s;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    animation-delay: 0.2s;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-2xl);
+    animation-delay: 0.3s;
+  }
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-xl);
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 80vh;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+    }
+  }
+</style>

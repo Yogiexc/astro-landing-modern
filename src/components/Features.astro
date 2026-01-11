@@ -1,0 +1,126 @@
+---
+const features = [
+  {
+    icon: '⚡',
+    title: 'Island Architecture',
+    description: 'Komponen interaktif di-load secara terisolasi. Hanya JavaScript yang dibutuhkan yang di-ship ke browser.'
+  },
+  {
+    icon: '🎯',
+    title: 'Zero JS by Default',
+    description: 'Halaman di-render sebagai HTML static. Tidak ada JavaScript overhead kecuali explicitly diminta.'
+  },
+  {
+    icon: '🚀',
+    title: 'Lightning Fast',
+    description: 'Time to Interactive < 1 detik. Perfect Lighthouse score. SEO optimized out of the box.'
+  },
+  {
+    icon: '🧩',
+    title: 'Framework Agnostic',
+    description: 'Gunakan React, Vue, Svelte, atau Solid dalam satu project. Mix and match sesuai kebutuhan.'
+  },
+  {
+    icon: '📦',
+    title: 'Optimal Bundle Size',
+    description: 'Hanya ship code yang digunakan. Automatic code splitting dan lazy loading.'
+  },
+  {
+    icon: '🎨',
+    title: 'Developer Experience',
+    description: 'TypeScript support, Hot Module Replacement, component scoped styles, dan tooling modern.'
+  }
+];
+---
+
+<section id="features" class="section features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Kenapa <span class="gradient-text">Astro</span>?</h2>
+      <p class="section-description">
+        Astro menghadirkan paradigma baru dalam web development: 
+        content-first dengan performance sebagai prioritas utama.
+      </p>
+    </div>
+    
+    <div class="features-grid">
+      {features.map((feature) => (
+        <div class="feature-card">
+          <div class="feature-icon">{feature.icon}</div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-description">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-3xl);
+  }
+  
+  .section-header h2 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .section-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  .feature-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    line-height: 1;
+  }
+  
+  .feature-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    
+    .feature-card {
+      padding: var(--space-lg);
+    }
+  }
+</style>

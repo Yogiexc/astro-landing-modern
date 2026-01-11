@@ -1,0 +1,217 @@
+---
+const comparisons = [
+  {
+    metric: 'Initial Load',
+    astro: '< 1s',
+    spa: '3-5s',
+  },
+  {
+    metric: 'JavaScript Size',
+    astro: '0kb (default)',
+    spa: '200-500kb',
+  },
+  {
+    metric: 'Time to Interactive',
+    astro: '< 1s',
+    spa: '3-8s',
+  },
+  {
+    metric: 'SEO Score',
+    astro: '100/100',
+    spa: '60-80/100',
+  },
+  {
+    metric: 'Core Web Vitals',
+    astro: 'Excellent',
+    spa: 'Needs Optimization',
+  }
+];
+---
+
+<section id="benefits" class="section benefits">
+  <div class="container">
+    <div class="benefits-layout">
+      <div class="benefits-content">
+        <h2>Performance yang <span class="gradient-text">Terukur</span></h2>
+        <p class="lead">
+          Astro bukan sekadar framework baru. Ini adalah paradigm shift 
+          dalam membangun web apps yang prioritaskan user experience.
+        </p>
+        
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            <div>
+              <h4>SEO Optimal</h4>
+              <p>Server-rendered HTML untuk perfect SEO. No hydration delays.</p>
+            </div>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            <div>
+              <h4>Mobile-First Performance</h4>
+              <p>Minimal JavaScript = faster load di mobile networks.</p>
+            </div>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            <div>
+              <h4>Progressive Enhancement</h4>
+              <p>Core functionality works tanpa JS. Enhancement di-load on-demand.</p>
+            </div>
+          </div>
+          
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            <div>
+              <h4>Developer Productivity</h4>
+              <p>Write less code. Ship less code. Debug less code.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comparison-table">
+        <div class="table-header">
+          <div class="table-cell">Metric</div>
+          <div class="table-cell highlight">Astro</div>
+          <div class="table-cell">Traditional SPA</div>
+        </div>
+        
+        {comparisons.map((item) => (
+          <div class="table-row">
+            <div class="table-cell metric-name">{item.metric}</div>
+            <div class="table-cell astro-value">{item.astro}</div>
+            <div class="table-cell spa-value">{item.spa}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits {
+    background: var(--color-bg);
+  }
+  
+  .benefits-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+  
+  .benefits-content h2 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+  
+  .benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .benefit-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: start;
+  }
+  
+  .benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .benefit-item h4 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+  
+  .benefit-item p {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  
+  .comparison-table {
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+  
+  .table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    background: var(--color-bg);
+    border-bottom: 2px solid var(--color-border);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .table-row:last-child {
+    border-bottom: none;
+  }
+  
+  .table-cell {
+    padding: var(--space-md);
+    color: var(--color-text);
+  }
+  
+  .table-header .table-cell {
+    color: var(--color-text-secondary);
+  }
+  
+  .highlight {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  }
+  
+  .metric-name {
+    font-weight: 500;
+  }
+  
+  .astro-value {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  .spa-value {
+    color: var(--color-text-secondary);
+  }
+  
+  @media (max-width: 968px) {
+    .benefits-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+    
+    .table-header,
+    .table-row {
+      grid-template-columns: 1.2fr 1fr 1fr;
+      font-size: 0.813rem;
+    }
+    
+    .table-cell {
+      padding: var(--space-sm);
+    }
+  }
+</style>

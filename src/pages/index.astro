@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Benefits from '../components/Benefits.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.svelte';
+---
+
+<Layout 
+  title="Astro Landing Modern - Island Architecture Demo"
+  description="Demonstrasi Island Architecture dengan Astro: Zero JavaScript by default, super fast, SEO optimal"
+>
+  <ThemeToggle client:load />
+  
+  <Hero />
+  <Features />
+  <Benefits />
+  <CTA />
+  <Footer />
+</Layout>
